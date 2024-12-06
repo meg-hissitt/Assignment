@@ -1,0 +1,18 @@
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\bin\Debug\net8.0\Hospital System2.exe
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\bin\Debug\net8.0\Hospital System2.deps.json
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\bin\Debug\net8.0\Hospital System2.runtimeconfig.json
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\bin\Debug\net8.0\Hospital System2.dll
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\bin\Debug\net8.0\Hospital System2.pdb
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.csproj.AssemblyReference.cache
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.AssemblyInfoInputs.cache
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.AssemblyInfo.cs
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.csproj.CoreCompileInputs.cache
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital.4F087DB9.Up2Date
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.dll
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\refint\Hospital System2.dll
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.pdb
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.genruntimeconfig.cache
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\ref\Hospital System2.dll
+C:\Users\hissi\source\repos\Hospital System2\Hospital System2\obj\Debug\net8.0\Hospital System2.sourcelink.json
