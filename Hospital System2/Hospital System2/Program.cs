@@ -48,13 +48,47 @@
                 {
                     Console.WriteLine("Invalid input");
                 }
+            
             }
-
         }
 
+        private static void userActions (Staff user)
+        {
+            switch (user.StaffRole)
+            {
+                case Role.Admin:
+                    Console.WriteLine("1. View all patients");
+                    Console.WriteLine("2. Search");
+                    Console.WriteLine("3. Add new patient");
+                    Console.WriteLine("4. Add new staff member");
+                    Console.WriteLine("5. Update user");
+                    Console.Write("Select a choice:");
+                    string adminChoice = Console.ReadLine();
+                    break;
+                case Role.Doctor:
+                    Console.WriteLine("1. View All patients");
+                    Console.WriteLine("2. Search");
+                    Console.WriteLine("3. Add appointment");
+                    string doctorChoice = Console.ReadLine();
+                    break;
+                case Role.Nurse:
+                    Console.WriteLine("1. Add new patient");
+                    Console.WriteLine("2. View All patients");
+                    Console.WriteLine("3. Search");
+                    Console.WriteLine("4. Add appointment");
+                    string nurseChoice = Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Role not recognized.");
+                    break;
+            }
+        }
 
     }
+
+
 }
+
 
 
 
