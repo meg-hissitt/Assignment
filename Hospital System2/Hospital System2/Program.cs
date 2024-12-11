@@ -82,7 +82,7 @@
                     {
                         if (File.Exists("users.json"))
                         {
-                            string jsonString = File.ReadAllText("users.json");
+                            string jsonString = File.ReadAllText("patients.json");
                             List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
 
                             foreach (Patient patient in patients)
@@ -95,7 +95,7 @@
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
-                        uman.PatientSearch();
+                        uman.PatientSearch(search);
                     }
                     else if (adminChoice == 3)
                     {
@@ -124,9 +124,9 @@
 
                     if (doctorChoice == 1)
                     {
-                        if (File.Exists("users.json"))
+                        if (File.Exists("patients.json"))
                         {
-                            string jsonString = File.ReadAllText("users.json");
+                            string jsonString = File.ReadAllText("patients.json");
                             List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
 
                             foreach (Patient patient in patients)
@@ -139,7 +139,7 @@
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
-                        uman.PatientSearch();
+                        uman.PatientSearch(search);
                     }
                     else if (doctorChoice == 3)
                     {
@@ -164,9 +164,9 @@
                     }
                     else if (nurseChoice == 2)
                     {
-                        if (File.Exists("users.json"))
+                        if (File.Exists("patients.json"))
                         {
-                            string jsonString = File.ReadAllText("users.json");
+                            string jsonString = File.ReadAllText("patients.json");
                             List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
 
                             foreach (Patient patient in patients)
@@ -179,7 +179,7 @@
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
-                        uman.PatientSearch();
+                        uman.PatientSearch(search);
                     }
                     else if (nurseChoice == 4)
                     {

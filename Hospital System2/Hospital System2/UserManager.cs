@@ -12,22 +12,27 @@ namespace Hospital_System2
     class UserManager
     {
         private List<Staff> _staffs;
-        public List<Staff> StaffMembers {
-            get {
+        public List<Staff> StaffMembers
+        {
+            get
+            {
                 if (_staffs == null)
                 {
                     _staffs = LoadStaffMembers();
                 }
                 return _staffs;
-            } 
-            set{
-            
-            } }
+            }
+            set
+            {
+
+            }
+        }
         private List<Patient> _patients;
-        public List<Patient> Patients { 
+        public List<Patient> Patients
+        {
             get
             {
-                if(_patients == null) { _patients = LoadPatients(); }
+                if (_patients == null) { _patients = LoadPatients(); }
                 return _patients;
             }
             set
@@ -130,31 +135,18 @@ namespace Hospital_System2
             Console.Write("Choice: ");
             int roleChoice = int.Parse(Console.ReadLine());
 
-            Staff newStaff = new Staff { Name = staffName, StaffNumber = staffNumber, Email = staffEmail, Password = staffPassword };
+            Staff newStaff = new Staff { Name = staffName, StaffNumber = staffNumber, Email = staffEmail, Password = staffPassword, };
             StaffMembers.Add(newStaff);
             SaveStaff(StaffMembers);
         }
-        public void PatientSearch()
+        public void PatientSearch(String search)
         {
-            
-            string name = Console.ReadLine();
-            string dob = Console.ReadLine();
-            string patientID = Console.ReadLine();
+
             foreach (var patient in Patients)
             {
-                if (patient.Name == name || patient.DoB == dob || patient.PatientID == patientID)
+                if (patient.Name == search || patient.DoB == search || patient.PatientID == search)
                 {
-                    string jsonString = File.ReadAllText("users.json");
-                    List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
-
-                    foreach (Patient value in patients)
-                    {
-                        Console.WriteLine($"Patient name: {patient.Name}");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No results found");
+                    Console.WriteLine(patient.Name);
                 }
             }
         }

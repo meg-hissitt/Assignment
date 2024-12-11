@@ -1,9 +1,1 @@
-[
-    {
-        "Name": "Name1 Name2",
-        "StaffNumber": "c4047676",
-        "Email": "admin@patientsystem.com",
-        "Password": "Hello1234",
-        "StaffRole": "Admin"
-    }
-]
+[{"Name":"Name1 Name2","StaffNumber":"c4047676","Email":"admin@patientsystem.com","Password":"Hello1234","StaffRole":0},{"Name":"Staff1 Name1","StaffNumber":"c4047676","Email":"staff","Password":"hello12","StaffRole":2}]
