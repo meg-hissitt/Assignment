@@ -5,17 +5,17 @@
     using System.ComponentModel.Design;
     using System.Runtime.CompilerServices;
     using static Hospital_System2.UserManager;
-    
+    // login for testing - username = admin@patientsystem.com & password = Hello1234
     class Program
     {
-        private static Staff CurrentUser = null; //TODO change Patient to Staff
+        private static Staff CurrentUser = null;
 
         string usersFilePath = @"users.json";
         public static void Main(string[] args)
         {
             UserManager uman = new UserManager();
 
-            //uman.LoadStaffMembers();
+            
 
             bool running = true;
             while (running)
@@ -25,8 +25,7 @@
                 Console.WriteLine("1. Login");
                 Console.WriteLine("2. Exit");
                 Console.Write("Select a menu option:  ");
-                //Console.WriteLine("Reset password"); 
-
+             
                 string choice = Console.ReadLine();
 
 
@@ -45,7 +44,6 @@
                 }
                 else if (choice == "2")
                 {
-                    //uman.PatientRegister();
                     running = false;
                     CurrentUser = null;
                 }
@@ -73,7 +71,6 @@
                     Console.WriteLine("2. Search");
                     Console.WriteLine("3. Add new patient");
                     Console.WriteLine("4. Add new staff member");
-                    //Console.WriteLine("5. Update user");
                     Console.Write("Select a choice:");
                     
                     int adminChoice = int.Parse(Console.ReadLine());
@@ -105,10 +102,6 @@
                     {
                         uman.RegisterStaff();
                     }
-                    //else if (adminChoice == 5)
-                   // {
-                      //  Console.Write("");
-                   // }
                     else
                     {
                         Console.WriteLine("Invalid option");

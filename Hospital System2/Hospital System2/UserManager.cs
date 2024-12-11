@@ -64,8 +64,7 @@ namespace Hospital_System2
             return patientList;
         }
 
-        //TODO: change Patient to Staff
-        public Staff? Login()
+        public Staff Login()
         {
             Console.Write("Username: ");
             string username = Console.ReadLine();
@@ -129,13 +128,18 @@ namespace Hospital_System2
 
             Console.WriteLine("Select role:");
             Console.WriteLine("1. Admin");
-            Console.WriteLine("2. Doctor");
-            Console.WriteLine("3. Nurse");
-            Console.WriteLine("4. Patient");
+            Console.WriteLine("2. Nurse");
+            Console.WriteLine("3. Doctor");
             Console.Write("Choice: ");
             int roleChoice = int.Parse(Console.ReadLine());
+            Role staffRole = roleChoice switch
+            {
+                1 => Role.Admin,
+                2 => Role.Nurse,
+                3 => Role.Doctor,
+            };
 
-            Staff newStaff = new Staff { Name = staffName, StaffNumber = staffNumber, Email = staffEmail, Password = staffPassword, };
+            Staff newStaff = new Staff { Name = staffName, StaffNumber = staffNumber, Email = staffEmail, Password = staffPassword, StaffRole = staffRole };
             StaffMembers.Add(newStaff);
             SaveStaff(StaffMembers);
         }
