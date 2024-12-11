@@ -1,16 +1,9 @@
 [
     {
-        "Username": "username1",
-        "Password": "password1",
-        "Name": "Firstname Lastname",
-        "PatientID": "c4047676",
-        "DoB": "MonthYear"
-    },
-    {
-        "Username": "username2",
-        "Password": "password2",
         "Name": "Name1 Name2",
-        "PatientID": "c4047676",
-        "DoB": "28/10/2001"
+        "StaffNumber": "c4047676",
+        "Email": "admin@patientsystem.com",
+        "Password": "Hello1234",
+        "StaffRole": "Admin"
     }
 ]

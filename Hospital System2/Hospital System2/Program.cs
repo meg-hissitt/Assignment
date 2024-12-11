@@ -64,6 +64,8 @@
         private static void UserActions (Staff user)
              
         {
+            UserManager uman = new UserManager();
+
             switch (user.StaffRole)
             {
                 case Role.Admin:
@@ -71,7 +73,7 @@
                     Console.WriteLine("2. Search");
                     Console.WriteLine("3. Add new patient");
                     Console.WriteLine("4. Add new staff member");
-                    Console.WriteLine("5. Update user");
+                    //Console.WriteLine("5. Update user");
                     Console.Write("Select a choice:");
                     
                     int adminChoice = int.Parse(Console.ReadLine());
@@ -93,20 +95,20 @@
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
-                        
+                        uman.PatientSearch();
                     }
                     else if (adminChoice == 3)
                     {
-                       uman.PatientRegister();
+                        uman.PatientRegister();
                     }
                     else if (adminChoice == 4)
                     {
-                        Console.Write("");
+                        uman.RegisterStaff();
                     }
-                    else if (adminChoice == 5)
-                    {
-                        Console.Write("");
-                    }
+                    //else if (adminChoice == 5)
+                   // {
+                      //  Console.Write("");
+                   // }
                     else
                     {
                         Console.WriteLine("Invalid option");
@@ -122,11 +124,22 @@
 
                     if (doctorChoice == 1)
                     {
-                        Console.Write("");
+                        if (File.Exists("users.json"))
+                        {
+                            string jsonString = File.ReadAllText("users.json");
+                            List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
+
+                            foreach (Patient patient in patients)
+                            {
+                                Console.WriteLine($"Patient name: {patient.Name}");
+                            }
+                        }
                     }
                     else if (doctorChoice == 2)
                     {
-                        Console.Write("");
+                        Console.WriteLine("Enter a name, date of birth or patient number");
+                        string search = Console.ReadLine();
+                        uman.PatientSearch();
                     }
                     else if (doctorChoice == 3)
                     {
@@ -147,15 +160,26 @@
 
                     if (nurseChoice == 1)
                     {
-                        Console.Write("");
+                        uman.PatientRegister();
                     }
                     else if (nurseChoice == 2)
                     {
-                        Console.Write("");
+                        if (File.Exists("users.json"))
+                        {
+                            string jsonString = File.ReadAllText("users.json");
+                            List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
+
+                            foreach (Patient patient in patients)
+                            {
+                                Console.WriteLine($"Patient name: {patient.Name}");
+                            }
+                        }
                     }
                     else if (nurseChoice == 3)
                     {
-                        Console.Write("");
+                        Console.WriteLine("Enter a name, date of birth or patient number");
+                        string search = Console.ReadLine();
+                        uman.PatientSearch();
                     }
                     else if (nurseChoice == 4)
                     {

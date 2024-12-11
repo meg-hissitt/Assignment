@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hospital_System2
 {
-    internal class Patient
+    public class Patient
     {
+        public string Name { get; set; }
+        public string PatientID { get; set; }
+        public string DoB { get; set; }
+
     }
 }

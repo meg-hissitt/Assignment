@@ -50,9 +50,9 @@ namespace Hospital_System2
         public List<Patient> LoadPatients()
         {
             List<Patient> patientList = new List<Patient>();
-            if (File.Exists(@"patient.json"))
+            if (File.Exists(@"patients.json"))
             {
-                string json = File.ReadAllText(@"patient.json");
+                string json = File.ReadAllText(@"patients.json");
                 patientList = JsonConvert.DeserializeObject<List<Patient>>(json);
             }
 
@@ -80,31 +80,25 @@ namespace Hospital_System2
         void SavePatients(List<Patient> users)
         {
             string json = JsonConvert.SerializeObject(users);
-            File.WriteAllText(@"users.json", json);
+            File.WriteAllText(@"patients.json", json);
         }
         public void PatientRegister()
         {
-            Console.Write("Enter your first and last name: ");
+            Console.Write("Enter patients first and last name: ");
             string name = Console.ReadLine();
 
-            Console.Write("Enter your Date of Birth: ");
+            Console.Write("Enter the Date of Birth: ");
             string DoB = Console.ReadLine();
 
-            Console.Write("Enter your patient number: ");
+            Console.Write("Enter the patient number: ");
             string patientID = Console.ReadLine();
-
-            Console.Write("Create a username: ");
-            string username = Console.ReadLine();
-
-            Console.Write("Create a password: ");
-            string password = Console.ReadLine();
 
             Console.WriteLine("Select role:");
             Console.WriteLine("1. Patient");
             Console.Write("Choice: ");
             int roleChoice = int.Parse(Console.ReadLine());
 
-            Patient newUser = new Patient { Name = name, DoB = DoB, PatientID = patientID, Username = username, Password = password };
+            Patient newUser = new Patient { Name = name, DoB = DoB, PatientID = patientID };
             Patients.Add(newUser);
             SavePatients(Patients);
 
@@ -150,7 +144,13 @@ namespace Hospital_System2
             {
                 if (patient.Name == name || patient.DoB == dob || patient.PatientID == patientID)
                 {
-                    Console.WriteLine("");
+                    string jsonString = File.ReadAllText("users.json");
+                    List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
+
+                    foreach (Patient value in patients)
+                    {
+                        Console.WriteLine($"Patient name: {patient.Name}");
+                    }
                 }
                 else
                 {
