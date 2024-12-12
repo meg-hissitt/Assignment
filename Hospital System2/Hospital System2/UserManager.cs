@@ -103,9 +103,24 @@ namespace Hospital_System2
             Console.Write("Enter the Date of Birth: ");
             string DoB = Console.ReadLine();
 
-            Console.Write("Enter the patient number: ");
-            string patientID = Console.ReadLine();
+            if (!File.Exists(@"count.txt")) 
+            { 
+                File.Create(@"count.txt").Close();
+                File.WriteAllText(@"count.txt", "0");
+            }
+            string txtFile = File.ReadAllText(@"count.txt");
+            int counter = int.Parse(txtFile);
 
+            counter += 1;
+            File.WriteAllText(@"count.txt", counter.ToString());
+                
+            string currentDate = DateTime.Now.ToString("yyyyMMdd");
+
+            string patientNumber = $"{currentDate}-{counter:D2}";
+            Console.WriteLine($"Generated PatientID: {patientNumber}");
+
+            Console.Write("Enter the patient number (generated above): ");
+            string patientID = Console.ReadLine();
             Console.WriteLine("Select role:");
             Console.WriteLine("1. Patient");
             Console.Write("Choice: ");

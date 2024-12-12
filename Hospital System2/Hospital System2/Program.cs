@@ -72,6 +72,7 @@
                     Console.WriteLine("3. Add new patient");
                     Console.WriteLine("4. Add new staff member");
                     Console.WriteLine("5. View all staff members");
+                    Console.WriteLine("6. Logout");
                     Console.Write("Select a choice:");
                     
                     string adminChoice = Console.ReadLine();
@@ -112,9 +113,14 @@
 
                             foreach (Staff staff in staffs)
                             {
-                                Console.WriteLine($"Patient name: {staff.Name}");
+                                Console.WriteLine($"Staff name: {staff.Name}");
                             }
                         }
+                    }
+                    else if (adminChoice == "6")
+                    {
+                        CurrentUser = null;
+                        return; 
                     }
                     else
                     {
@@ -127,6 +133,7 @@
                     Console.WriteLine("2. Search");
                     Console.WriteLine("3. Add appointment");
                     Console.WriteLine("4. View patient records");
+                    Console.WriteLine("5. Logout");
 
                     string doctorChoice = Console.ReadLine();
 
@@ -168,6 +175,11 @@
                             }
                         }
                     }
+                    else if (doctorChoice == "5")
+                    {
+                        CurrentUser = null;
+                        return;
+                    }
                     else
                     {
                         Console.WriteLine("Invalid option");
@@ -179,6 +191,7 @@
                     Console.WriteLine("3. Search");
                     Console.WriteLine("4. Add appointment");
                     Console.WriteLine("5. View patient records");
+                    Console.WriteLine("6. Logout");
 
                     string nurseChoice = Console.ReadLine();
 
@@ -223,6 +236,11 @@
                                 Console.WriteLine($"Patient date of birth: {patient.DoB}");
                             }
                         }
+                    }
+                    else if (nurseChoice == "6")
+                    {
+                        CurrentUser = null;
+                        return;
                     }
                     else
                     {
