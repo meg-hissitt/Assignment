@@ -66,18 +66,27 @@ namespace Hospital_System2
 
         public Staff Login()
         {
-            Console.Write("Username: ");
-            string username = Console.ReadLine();
-            Console.Write("Password: ");
-            string password = Console.ReadLine();
-
-            foreach (var user in StaffMembers)
+            Console.Write("Email: ");
+            string email = Console.ReadLine();
+            if (email.Contains("@"))
             {
-                if (user.Email == username && user.Password == password)
+                Console.Write("Password: ");
+                string password = Console.ReadLine();
+
+                foreach (var user in StaffMembers)
                 {
-                    return user;
+                    if (user.Email == email && user.Password == password)
+                    {
+                        return user;
+                    }
                 }
+                return null;
             }
+            else
+            {
+                Console.WriteLine("Invalid email address");
+            }
+
             return null;
 
         }
@@ -112,7 +121,7 @@ namespace Hospital_System2
             string json = JsonConvert.SerializeObject(users);
             File.WriteAllText(@"users.json", json);
         }
-        public void RegisterStaff()
+        public void StaffRegister()
         {
             Console.Write("Enter staff name: ");
             string staffName = Console.ReadLine();
@@ -122,8 +131,10 @@ namespace Hospital_System2
 
             Console.Write("Enter staff email: ");
             string staffEmail = Console.ReadLine();
-
-            Console.Write("Create a password: ");
+            if (staffEmail.Contains("@"))
+            {
+                
+                Console.Write("Create a password: ");
             string staffPassword = Console.ReadLine();
 
             Console.WriteLine("Select role:");
@@ -142,6 +153,12 @@ namespace Hospital_System2
             Staff newStaff = new Staff { Name = staffName, StaffNumber = staffNumber, Email = staffEmail, Password = staffPassword, StaffRole = staffRole };
             StaffMembers.Add(newStaff);
             SaveStaff(StaffMembers);
+            }
+            else
+            {
+                Console.WriteLine("Invalid email address");
+            }
+               
         }
         public void PatientSearch(String search)
         {
@@ -154,5 +171,22 @@ namespace Hospital_System2
                 }
             }
         }
+
+        //public void Logout()
+        //{
+            
+        //    Console.Clear();
+        //    Console.WriteLine("1. Login");
+        //    Console.WriteLine("2. Password recovery");
+        //    Console.Write("3. Exit");
+        //    string choice = Console.ReadLine();
+
+        //    if (choice == "1")
+        //    {
+        //        Login();
+        //    }
+        //}
+
     }
+    
 }

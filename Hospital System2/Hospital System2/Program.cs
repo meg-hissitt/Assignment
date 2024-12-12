@@ -71,13 +71,14 @@
                     Console.WriteLine("2. Search");
                     Console.WriteLine("3. Add new patient");
                     Console.WriteLine("4. Add new staff member");
+                    Console.WriteLine("5. View all staff members");
                     Console.Write("Select a choice:");
                     
-                    int adminChoice = int.Parse(Console.ReadLine());
+                    string adminChoice = Console.ReadLine();
 
-                    if (adminChoice == 1)
+                    if (adminChoice == "1")
                     {
-                        if (File.Exists("users.json"))
+                        if (File.Exists("patients.json"))
                         {
                             string jsonString = File.ReadAllText("patients.json");
                             List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
@@ -88,19 +89,32 @@
                             }
                         }
                     }
-                    else if (adminChoice == 2)
+                    else if (adminChoice == "2")
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
                         uman.PatientSearch(search);
                     }
-                    else if (adminChoice == 3)
+                    else if (adminChoice == "3")
                     {
                         uman.PatientRegister();
                     }
-                    else if (adminChoice == 4)
+                    else if (adminChoice == "4")
                     {
-                        uman.RegisterStaff();
+                        uman.StaffRegister();
+                    }
+                    else if (adminChoice == "5")
+                    {
+                        if (File.Exists("users.json"))
+                        {
+                            string jsonString = File.ReadAllText("users.json");
+                            List<Staff> staffs = JsonConvert.DeserializeObject<List<Staff>>(jsonString).ToList();
+
+                            foreach (Staff staff in staffs)
+                            {
+                                Console.WriteLine($"Patient name: {staff.Name}");
+                            }
+                        }
                     }
                     else
                     {
@@ -112,10 +126,11 @@
                     Console.WriteLine("1. View All patients");
                     Console.WriteLine("2. Search");
                     Console.WriteLine("3. Add appointment");
+                    Console.WriteLine("4. View patient records");
 
-                    int doctorChoice = int.Parse(Console.ReadLine());
+                    string doctorChoice = Console.ReadLine();
 
-                    if (doctorChoice == 1)
+                    if (doctorChoice == "1")
                     {
                         if (File.Exists("patients.json"))
                         {
@@ -128,15 +143,30 @@
                             }
                         }
                     }
-                    else if (doctorChoice == 2)
+                    else if (doctorChoice == "2")
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
                         uman.PatientSearch(search);
                     }
-                    else if (doctorChoice == 3)
+                    else if (doctorChoice == "3")
                     {
                         Console.Write("");
+                    }
+                    else if (doctorChoice == "4")
+                    {
+                        if (File.Exists("patients.json"))
+                        {
+                            string jsonString = File.ReadAllText("patients.json");
+                            List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
+
+                            foreach (Patient patient in patients)
+                            {
+                                Console.WriteLine($"Patient name: {patient.Name}");
+                                Console.WriteLine($"Patient number:{patient.PatientID}");
+                                Console.WriteLine($"Patient date of birth: {patient.DoB}");
+                            }
+                        }
                     }
                     else
                     {
@@ -148,14 +178,15 @@
                     Console.WriteLine("2. View All patients");
                     Console.WriteLine("3. Search");
                     Console.WriteLine("4. Add appointment");
+                    Console.WriteLine("5. View patient records");
 
-                    int nurseChoice = int.Parse(Console.ReadLine());
+                    string nurseChoice = Console.ReadLine();
 
-                    if (nurseChoice == 1)
+                    if (nurseChoice == "1")
                     {
                         uman.PatientRegister();
                     }
-                    else if (nurseChoice == 2)
+                    else if (nurseChoice == "2")
                     {
                         if (File.Exists("patients.json"))
                         {
@@ -168,15 +199,30 @@
                             }
                         }
                     }
-                    else if (nurseChoice == 3)
+                    else if (nurseChoice == "3")
                     {
                         Console.WriteLine("Enter a name, date of birth or patient number");
                         string search = Console.ReadLine();
                         uman.PatientSearch(search);
                     }
-                    else if (nurseChoice == 4)
+                    else if (nurseChoice == "4")
                     {
                         Console.Write("");
+                    }
+                    else if (nurseChoice == "5")
+                    {
+                        if (File.Exists("patients.json"))
+                        {
+                            string jsonString = File.ReadAllText("patients.json");
+                            List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonString).ToList();
+
+                            foreach (Patient patient in patients)
+                            {
+                                Console.WriteLine($"Patient name: {patient.Name}");
+                                Console.WriteLine($"Patient number:{patient.PatientID}");
+                                Console.WriteLine($"Patient date of birth: {patient.DoB}");
+                            }
+                        }
                     }
                     else
                     {
