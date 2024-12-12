@@ -131,9 +131,9 @@
                 case Role.Doctor:
                     Console.WriteLine("1. View All patients");
                     Console.WriteLine("2. Search");
-                    Console.WriteLine("3. Add appointment");
-                    Console.WriteLine("4. View patient records");
-                    Console.WriteLine("5. Logout");
+                    //Console.WriteLine("3. Add appointment");
+                    Console.WriteLine("3. View patient records");
+                    Console.WriteLine("4. Logout");
 
                     string doctorChoice = Console.ReadLine();
 
@@ -156,11 +156,11 @@
                         string search = Console.ReadLine();
                         uman.PatientSearch(search);
                     }
+                    //else if (doctorChoice == "3")
+                    //{
+                    //    Console.Write("");
+                    //}
                     else if (doctorChoice == "3")
-                    {
-                        Console.Write("");
-                    }
-                    else if (doctorChoice == "4")
                     {
                         if (File.Exists("patients.json"))
                         {
@@ -175,7 +175,7 @@
                             }
                         }
                     }
-                    else if (doctorChoice == "5")
+                    else if (doctorChoice == "4")
                     {
                         CurrentUser = null;
                         return;
@@ -189,9 +189,9 @@
                     Console.WriteLine("1. Add new patient");
                     Console.WriteLine("2. View All patients");
                     Console.WriteLine("3. Search");
-                    Console.WriteLine("4. Add appointment");
-                    Console.WriteLine("5. View patient records");
-                    Console.WriteLine("6. Logout");
+                   // Console.WriteLine("4. Add appointment");
+                    Console.WriteLine("4. View patient records");
+                    Console.WriteLine("5. Logout");
 
                     string nurseChoice = Console.ReadLine();
 
@@ -218,11 +218,11 @@
                         string search = Console.ReadLine();
                         uman.PatientSearch(search);
                     }
+                    //else if (nurseChoice == "4")
+                    //{
+                    //    Console.Write("");
+                    //}
                     else if (nurseChoice == "4")
-                    {
-                        Console.Write("");
-                    }
-                    else if (nurseChoice == "5")
                     {
                         if (File.Exists("patients.json"))
                         {
@@ -237,7 +237,7 @@
                             }
                         }
                     }
-                    else if (nurseChoice == "6")
+                    else if (nurseChoice == "5")
                     {
                         CurrentUser = null;
                         return;

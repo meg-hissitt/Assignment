@@ -183,24 +183,11 @@ namespace Hospital_System2
                 if (patient.Name == search || patient.DoB == search || patient.PatientID == search)
                 {
                     Console.WriteLine(patient.Name);
+                    Console.WriteLine(patient.DoB);
+                    Console.WriteLine(patient.PatientID);
                 }
             }
         }
-
-        //public void Logout()
-        //{
-            
-        //    Console.Clear();
-        //    Console.WriteLine("1. Login");
-        //    Console.WriteLine("2. Password recovery");
-        //    Console.Write("3. Exit");
-        //    string choice = Console.ReadLine();
-
-        //    if (choice == "1")
-        //    {
-        //        Login();
-        //    }
-        //}
 
     }
     
